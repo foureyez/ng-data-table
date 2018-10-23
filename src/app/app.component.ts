@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Column } from 'data-table';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'data-table-app';
+  columns: Column[];
+
+  rows = [{
+    id: '1',
+    name: 'Abhijeet',
+    age: '23',
+    address: 'Hyderabad'
+  }, {
+    id: '2',
+    name: 'Anmol',
+    age: '43',
+    address: 'Hyderabad'
+  }]
+
+  constructor() {
+    this.prepareColumn();
+  }
+
+  prepareColumn() {
+    this.columns = new Array<Column>();
+    this.columns.push(new Column('id', 'ID'));
+    this.columns.push(new Column('name', 'Name'));
+    this.columns.push(new Column('age', 'Age'));
+    this.columns.push(new Column('address', 'Address'));
+  }
+
 }

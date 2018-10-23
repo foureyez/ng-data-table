@@ -1,2 +1,10 @@
-<table-head></table-head>
-<table-body></table-body>
+<table class="table">
+    <thead table-head
+        [columns]="table.columns">
+    </thead>
+
+    <tbody table-body 
+        [rows]="table.rows"  
+        [columns]="table.columns">
+    </tbody>
+</table>
