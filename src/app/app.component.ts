@@ -20,7 +20,7 @@ export class AppComponent {
     name: 'Anmol',
     age: '43',
     address: 'Hyderabad'
-  }]
+  }];
 
   constructor() {
     this.prepareColumn();
@@ -28,10 +28,10 @@ export class AppComponent {
 
   prepareColumn() {
     this.columns = new Array<Column>();
-    this.columns.push(new Column('id', 'ID'));
-    this.columns.push(new Column('name', 'Name'));
-    this.columns.push(new Column('age', 'Age'));
-    this.columns.push(new Column('address', 'Address'));
+    this.columns.push(new Column('id', 'ID', false));
+    this.columns.push(new Column('name', 'Name', true));
+    this.columns.push(new Column('age', 'Age', true));
+    this.columns.push(new Column('address', 'Address', true));
   }
 
 }
