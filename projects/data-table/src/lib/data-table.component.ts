@@ -13,6 +13,8 @@ export class DataTableComponent implements OnInit, OnChanges {
 
   @Input() columns: Column[];
   @Input() rows: Object[];
+  @Input() filterEnabled: boolean;
+  @Input() shareLinksEnabled = false;
 
   constructor() {
     this.table = new Table();

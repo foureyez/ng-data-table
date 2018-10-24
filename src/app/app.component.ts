@@ -22,119 +22,125 @@ export class AppComponent {
     address: 'Hyderabad'
   }, {
     id: '3',
-    name: 'Anmol',
+    name: 'Nischayy',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '4',
-    name: 'Anmol',
+    name: 'Chitvan',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '5',
-    name: 'Anmol',
+    name: 'Piyush',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '6',
-    name: 'Anmol',
+    name: 'Vipin',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '7',
-    name: 'Anmol',
+    name: 'Abhhay',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '8',
-    name: 'Anmol',
+    name: 'Anusha',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '9',
-    name: 'Anmol',
+    name: 'Aayush',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '10',
-    name: 'Anmol',
+    name: 'Shivang',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '11',
-    name: 'Anmol',
+    name: 'Seepee',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '12',
-    name: 'Anmol',
+    name: 'Rakesh',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '13',
-    name: 'Anmol',
+    name: 'Raadha',
     age: '43',
     address: 'Hyderabad'
   }, {
     id: '14',
-    name: 'Anmol',
+    name: 'Chaman',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Charminar'
   }, {
     id: '15',
-    name: 'Anmol',
+    name: 'Charlie',
     age: '43',
-    address: 'Hyderabad'
+    address: 'London'
   }, {
     id: '16',
-    name: 'Anmol',
+    name: 'Gayatri',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Haridwar'
   }, {
     id: '17',
-    name: 'Anmol',
+    name: 'Ruuh',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Kashmir'
   }, {
     id: '18',
-    name: 'Anmol',
+    name: 'Rasam',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Jammu'
   }, {
     id: '19',
-    name: 'Anmol',
+    name: 'Ankit',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Mussorie'
   }, {
     id: '20',
-    name: 'Anmol',
+    name: 'Anurag',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Dehradun'
   }, {
     id: '21',
-    name: 'Anmol',
+    name: 'Himanshu',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Dehradun'
   }, {
     id: '22',
-    name: 'Anmol',
+    name: 'Sooraj',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Uttar Pradesh'
   }, {
     id: '23',
-    name: 'Anmol',
+    name: 'Rustam',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Lahore'
   }, {
     id: '24',
-    name: 'Anmol',
-    age: '43',
-    address: 'Hyderabad'
+    name: 'Roman',
+    age: '60',
+    address: 'Rme'
   }, {
     id: '25',
-    name: 'Anmol',
+    name: 'Nagraj',
     age: '43',
-    address: 'Hyderabad'
+    address: 'Jaipur'
+  },
+  {
+    id: '2',
+    name: 'Raghav',
+    age: '22',
+    address: 'Dehradun'
   }];
 
   constructor() {
@@ -143,10 +149,9 @@ export class AppComponent {
 
   prepareColumn() {
     this.columns = new Array<Column>();
-    this.columns.push(new Column('id', 'ID', false));
-    this.columns.push(new Column('name', 'Name', true));
-    this.columns.push(new Column('age', 'Age', true));
-    this.columns.push(new Column('address', 'Address', true));
+    this.columns.push(new Column('id', 'ID', false, false));
+    this.columns.push(new Column('name', 'Name', true, true));
+    this.columns.push(new Column('age', 'Age', true, true));
+    this.columns.push(new Column('address', 'Address', true, true));
   }
-
 }

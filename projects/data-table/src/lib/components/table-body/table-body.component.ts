@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Row } from '../../model/row';
 import { Column } from '../../model/column';
 import { DataTableService } from '../../data-table.service';
@@ -16,20 +15,34 @@ export class TableBodyComponent implements OnInit {
 
   @Input() rows: Row[];
   @Input() columns: Column[];
+  @Input() shareLinksEnabled: boolean;
+  @Input() filterEnabled: boolean;
+
   faLink = faLink;
+  filterData = {};
+  filteredRows = [];
 
   constructor(private data: DataTableService, private router: Router) {
-    this.attachUrlChangeEvent(router);
   }
 
   ngOnInit() {
     this.handleEvent();
+    this.initializeFilterData();
+    this.attachUrlChangeEvent();
   }
 
-  attachUrlChangeEvent(router: Router) {
+  attachUrlChangeEvent() {
+
+    if (!this.shareLinksEnabled) {
+      return;
+    }
+
+    // Subscribing to url change event.
     this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
+
+          // Getting the last part of the url (To read the #id and highlight the correct row.)
           const urlArray = event.url.split('/');
           const highlightId = urlArray[urlArray.length - 1];
 
@@ -41,26 +54,39 @@ export class TableBodyComponent implements OnInit {
                 row.isHighlighted = false;
               }
             });
-            console.log(highlightId.substring(1));
           }
         }
       });
   }
 
+  // Handles all the different types of events raised from Other Componenets.
   handleEvent() {
     this.data.currentMessage.subscribe(event => {
-      console.log('Event Received ' + event);
-
-      if (event.message === 'sort') {
-        this.sortTable(event.column);
+      switch (event.message) {
+        case 'sort':
+          this.sortRows(event.column);
+          break;
+        default:
+          console.log('Unknown Event Raised: ' + event.message);
       }
     });
   }
 
-  sortTable(column: Column) {
+  // Initialize the filteredRows and the search text for all the filterable columns.
+  initializeFilterData() {
+    this.filteredRows = this.rows;
+    this.columns.forEach(column => {
+      if (column.filterable) {
+        this.filterData[column.id] = '';
+      }
+    });
+  }
+
+  // Reads the sort type of the given column(up/down) and sorts accorodingly
+  sortRows(column: Column) {
     const direction = column.sortType === 'up' ? 1 : -1;
 
-    this.rows.sort((a: Row, b: Row) => {
+    this.filteredRows.sort((a: Row, b: Row) => {
       if (a.data[column.id] < b.data[column.id]) {
         return -1 * direction;
       } else if (a.data[column.id] > b.data[column.id]) {
@@ -71,7 +97,22 @@ export class TableBodyComponent implements OnInit {
     });
   }
 
-  updateLink(row: Row) {
+  // Filters the rows by checking if the each row cell matches the filterData.
+  filterRows() {
+    this.filteredRows =
+      this.rows.filter(row => {
+        let result = true;
 
+        this.columns
+          .filter(column => {
+            return column.filterable;
+          })
+          .forEach(column => {
+            console.log(column.id);
+            result = result && row.data[column.id].includes(this.filterData[column.id]);
+          });
+
+        return result;
+      });
   }
 }

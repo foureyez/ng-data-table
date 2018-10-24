@@ -1,10 +1,16 @@
-<table class="table table-bordered table-hover table-sm">
-    <thead table-head
-        [columns]="table.columns">
-    </thead>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-sm">
+        <thead table-head
+            [columns]="table.columns"
+            [shareLinksEnabled]="shareLinksEnabled">
+        </thead>
+    
+        <tbody table-body
+            [rows]="table.rows"  
+            [columns]="table.columns"
+            [filterEnabled]="filterEnabled"
+            [shareLinksEnabled]="shareLinksEnabled">
+        </tbody>
+    </table>
+</div>
 
-    <tbody table-body
-        [rows]="table.rows"  
-        [columns]="table.columns">
-    </tbody>
-</table>

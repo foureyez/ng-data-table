@@ -5,12 +5,14 @@ import { TableHeadComponent } from './components/table-head/table-head.component
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [DataTableComponent, TableBodyComponent, TableHeadComponent],
   exports: [DataTableComponent]

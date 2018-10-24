@@ -13,6 +13,7 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 export class TableHeadComponent implements OnInit {
 
   @Input() columns: Column[];
+  @Input() shareLinksEnabled: boolean;
 
   constructor(private data: DataTableService) {
   }
