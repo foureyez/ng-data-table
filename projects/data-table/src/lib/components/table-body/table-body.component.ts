@@ -1,8 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Row } from '../../model/row';
 import { Column } from '../../model/column';
 import { DataTableService } from '../../data-table.service';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { Router, NavigationStart } from '@angular/router';
+
 
 @Component({
   selector: '[table-body]',
@@ -15,10 +18,33 @@ export class TableBodyComponent implements OnInit {
   @Input() columns: Column[];
   faLink = faLink;
 
-  constructor(private data: DataTableService) { }
+  constructor(private data: DataTableService, private router: Router) {
+    this.attachUrlChangeEvent(router);
+  }
 
   ngOnInit() {
     this.handleEvent();
+  }
+
+  attachUrlChangeEvent(router: Router) {
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          const urlArray = event.url.split('/');
+          const highlightId = urlArray[urlArray.length - 1];
+
+          if (highlightId.indexOf('#') !== -1) {
+            this.rows.forEach(row => {
+              if (row.data['id'] === highlightId.substring(1)) {
+                row.isHighlighted = true;
+              } else {
+                row.isHighlighted = false;
+              }
+            });
+            console.log(highlightId.substring(1));
+          }
+        }
+      });
   }
 
   handleEvent() {
