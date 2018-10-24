@@ -6,10 +6,10 @@
     user-select: none; /* Standard */   
 }
 
-.sortIcon{
+.sort-icon{
     font-size: 0.8em;
 }
 
-.sortIcon :hover{
-    color: #231223;
+.sort-icon:hover{
+    color: #0350a8;
 }

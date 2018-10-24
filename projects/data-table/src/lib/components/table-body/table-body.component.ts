@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Row } from '../../model/row';
 import { Column } from '../../model/column';
 import { DataTableService } from '../../data-table.service';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: '[table-body]',
@@ -12,6 +13,7 @@ export class TableBodyComponent implements OnInit {
 
   @Input() rows: Row[];
   @Input() columns: Column[];
+  faLink = faLink;
 
   constructor(private data: DataTableService) { }
 
@@ -41,5 +43,9 @@ export class TableBodyComponent implements OnInit {
         return 0;
       }
     });
+  }
+
+  updateLink(row: Row) {
+
   }
 }

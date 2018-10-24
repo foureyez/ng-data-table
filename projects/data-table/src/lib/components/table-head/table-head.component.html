@@ -1,5 +1,10 @@
 <tr>
-    <th class="head" *ngFor="let column of columns" (click)="sort(column)">
-        {{column.title}} <fa-icon class="sortIcon" [icon]="column.sortIcon" *ngIf="column.sortable"></fa-icon>
+    <th class="head" 
+        *ngFor="let column of columns" 
+        (click)="sort(column)">
+
+        {{column.title}} 
+        <fa-icon class="sort-icon" [icon]="column.sortIcon" *ngIf="column.sortable"></fa-icon>
     </th>
+    <th class="head">Link</th>
 </tr>

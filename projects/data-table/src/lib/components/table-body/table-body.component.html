@@ -1,3 +1,4 @@
-<tr *ngFor="let row of rows">
+<tr *ngFor="let row of rows" (click)="updateLink(row)" [id]="row.data['id']">
     <td *ngFor="let column of columns">{{row.data[column.id]}}</td>
+    <td><a [href]="'#' + row.data['id']"><fa-icon class="sort-icon" [icon]="faLink"></fa-icon></a></td>
 </tr>

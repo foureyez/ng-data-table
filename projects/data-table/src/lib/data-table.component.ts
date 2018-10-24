@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, OnChanges } from '@angular/core';
 import { Table } from './model/table';
 import { Column } from './model/column';
 
@@ -7,30 +7,30 @@ import { Column } from './model/column';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })
-export class DataTableComponent implements OnInit {
+export class DataTableComponent implements OnInit, OnChanges {
 
   table: Table;
 
   @Input() columns: Column[];
   @Input() rows: Object[];
 
-  constructor(){
+  constructor() {
     this.table = new Table();
   }
 
   ngOnInit() {
-   
+
   }
 
   ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
     if (changes['columns']) {
       this.table.setColumns(this.columns);
-      console.log("Column Data Updated");
+      console.log('Column Data Updated');
     }
 
     if (changes['rows']) {
       this.table.setRows(this.rows);
-      console.log("Row Data Updated, New size : " + this.table.rows.length);
+      console.log('Row Data Updated, New size : ' + this.table.rows.length);
     }
   }
 }
