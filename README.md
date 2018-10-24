@@ -1,8 +1,15 @@
 # DataTableApp
-This is a demo project for Data Table library.
+This is a project for Data Table library.
 The demo files are located in /src/app folder. Data-Table library source is located in projects/data-table.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+## Usage
+
+To use this library in your project just install the dependency by running `npm install --save data-table`.
+
+### Basic Table
+<data-table [columns]="columns" [rows]="rows"></data-table>
+
+`rows` and `columns` objects can be defined in the angular component. E.g. [here](https://github.com/foureyez/data-table/blob/master/src/app/app.component.ts) 
 
 ## Development server
 To run this project locally :
