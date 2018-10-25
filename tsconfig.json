@@ -23,6 +23,12 @@
       ],
       "data-table/*": [
         "dist/data-table/*"
+      ],
+      "@foureyez/ng-data-table": [
+        "dist/foureyez/ng-data-table"
+      ],
+      "@foureyez/ng-data-table/*": [
+        "dist/foureyez/ng-data-table/*"
       ]
     }
   }

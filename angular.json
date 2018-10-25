@@ -134,33 +134,33 @@
         }
       }
     },
-    "data-table": {
-      "root": "projects/data-table",
-      "sourceRoot": "projects/data-table/src",
+    "@foureyez/ng-data-table": {
+      "root": "projects/foureyez/ng-data-table",
+      "sourceRoot": "projects/foureyez/ng-data-table/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/data-table/tsconfig.lib.json",
-            "project": "projects/data-table/ng-package.json"
+            "tsConfig": "projects/foureyez/ng-data-table/tsconfig.lib.json",
+            "project": "projects/foureyez/ng-data-table/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/data-table/src/test.ts",
-            "tsConfig": "projects/data-table/tsconfig.spec.json",
-            "karmaConfig": "projects/data-table/karma.conf.js"
+            "main": "projects/foureyez/ng-data-table/src/test.ts",
+            "tsConfig": "projects/foureyez/ng-data-table/tsconfig.spec.json",
+            "karmaConfig": "projects/foureyez/ng-data-table/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/data-table/tsconfig.lib.json",
-              "projects/data-table/tsconfig.spec.json"
+              "projects/foureyez/ng-data-table/tsconfig.lib.json",
+              "projects/foureyez/ng-data-table/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

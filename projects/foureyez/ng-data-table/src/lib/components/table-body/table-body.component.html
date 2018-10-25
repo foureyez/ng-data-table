@@ -1,6 +1,6 @@
 <tr *ngIf="filterEnabled">
     <td *ngFor="let column of columns">
-        <input type="text" class="form-control form-control-sm col-md-3" *ngIf="column.filterable" [placeholder]="column.title"
+        <input type="text" class="form-control form-control-sm" *ngIf="column.filterable" [placeholder]="column.title"
             [(ngModel)]="filterData[column.id]" (keyup)="filterRows()">
     </td>
     <td></td>
