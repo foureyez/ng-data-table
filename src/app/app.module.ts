@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DataTableModule } from 'data-table';
+import { DataTableModule } from '@foureyez/ng-data-table';
 
 @NgModule({
   declarations: [

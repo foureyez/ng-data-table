@@ -3,6 +3,7 @@ import { Table } from './model/table';
 import { Column } from './model/column';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']

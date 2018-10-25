@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Column } from 'data-table';
+import { Column } from '@foureyez/ng-data-table';
 
 @Component({
   selector: 'app-root',

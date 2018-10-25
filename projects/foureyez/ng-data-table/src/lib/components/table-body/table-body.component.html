@@ -1,15 +1,15 @@
 <tr *ngIf="filterEnabled">
+    <td></td>
     <td *ngFor="let column of columns">
         <input type="text" class="form-control form-control-sm" *ngIf="column.filterable" [placeholder]="column.title"
             [(ngModel)]="filterData[column.id]" (keyup)="filterRows()">
     </td>
-    <td></td>
 </tr>
 <tr *ngFor="let row of filteredRows" [id]="row.data['id']" [ngClass]="{'highlighted' : row.isHighlighted}">
-    <td *ngFor="let column of columns">{{row.data[column.id]}}</td>
     <td *ngIf="shareLinksEnabled">
         <a [href]="'#' + row.data['id']">
             <fa-icon class="sort-icon" [icon]="faLink"></fa-icon>
         </a>
     </td>
+    <td *ngFor="let column of columns">{{row.data[column.id]}}</td>
 </tr>
