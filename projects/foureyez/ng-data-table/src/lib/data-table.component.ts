@@ -28,12 +28,12 @@ export class DataTableComponent implements OnInit, OnChanges {
   ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
     if (changes['columns']) {
       this.table.setColumns(this.columns);
-      console.log('Column Data Updated');
+      console.log('Column Data Updated : Size ' + this.table.columns.length);
     }
 
     if (changes['rows']) {
       this.table.setRows(this.rows);
-      console.log('Row Data Updated, New size : ' + this.table.rows.length);
+      console.log('Row Data Updated : Size : ' + this.table.rows.length);
     }
   }
 }

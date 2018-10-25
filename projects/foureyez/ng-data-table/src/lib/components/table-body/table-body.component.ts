@@ -7,6 +7,7 @@ import { Router, NavigationStart } from '@angular/router';
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: '[table-body]',
   templateUrl: './table-body.component.html',
   styleUrls: ['./table-body.component.css']
@@ -108,8 +109,7 @@ export class TableBodyComponent implements OnInit {
             return column.filterable;
           })
           .forEach(column => {
-            console.log(column.id);
-            result = result && row.data[column.id].includes(this.filterData[column.id]);
+            result = result && row.data[column.id].toLowerCase().includes(this.filterData[column.id].toLowerCase());
           });
 
         return result;
