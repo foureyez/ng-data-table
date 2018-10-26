@@ -1,5 +1,6 @@
 # ng-data-table
 [![Build Status](https://travis-ci.org/foureyez/ng-data-table.svg?branch=master)](https://travis-ci.org/foureyez/ng-data-table)
+
 This angular library provides sorting, filtering..(adding more) capabilities to normal table.
 Built using Angular 7 and Bootstrap 4.
 
