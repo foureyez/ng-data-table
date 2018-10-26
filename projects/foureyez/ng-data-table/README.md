@@ -1,7 +1,7 @@
 # ng-data-table
-This libaray provides sorting, filtering..(adding more) capabilities to normal table.
+This angular library provides sorting, filtering..(adding more) capabilities to normal table.
+Built using Angular 7 and Bootstrap 4.
 
-* Built using Angular 7 and Bootstrap 4.
 * The demo files are located in /src/app folder. 
 * Data-Table library source is located in projects/data-table.
 
@@ -16,7 +16,7 @@ To use this library in your project just install the dependency by running `npm 
 ### Defining rows and columns in component
 * `rows` can be any valid JSON array.
 * `columns` can be defined inside the component. 
-* `data-table` takes `columns` as a array of [Column](https://github.com/foureyez/data-table/blob/master/projects/data-table/src/lib/model/column.ts) type. 
+* `data-table` takes `columns` as a array of [Column](https://github.com/foureyez/data-table/blob/master/projects/ng-data-table/src/lib/model/column.ts) type. 
 *  E.g. 
      ```javascript
      columns = new Array<Column>();

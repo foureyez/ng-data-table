@@ -1,7 +1,7 @@
 # ng-data-table
-This libaray provides sorting, filtering..(adding more) capabilities to normal table.
+This angular library provides sorting, filtering..(adding more) capabilities to normal table.
+Built using Angular 7 and Bootstrap 4.
 
-* Built using Angular 7 and Bootstrap 4.
 * The demo files are located in /src/app folder. 
 * Data-Table library source is located in projects/data-table.
 
