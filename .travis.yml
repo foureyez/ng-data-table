@@ -4,8 +4,7 @@ node_js:
   - 'node'
 
 install:
-  - npm install -g @angular/cli
   - npm install
 
 script:
-  - ng build @foureyez/ng-data-table
+  - npm run test-lib
