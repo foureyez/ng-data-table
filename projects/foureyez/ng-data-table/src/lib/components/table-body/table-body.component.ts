@@ -24,6 +24,7 @@ export class TableBodyComponent implements OnInit, OnChanges {
   filteredRows = [];
 
   constructor(private data: DataTableService, private router: Router) {
+
   }
 
   ngOnInit() {
@@ -36,7 +37,6 @@ export class TableBodyComponent implements OnInit, OnChanges {
   ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
     if (changes['rows']) {
       this.filteredRows = this.rows;
-      console.log('Rows data updated inside table-body : Size ' + this.filteredRows.length);
     }
   }
 
@@ -84,11 +84,14 @@ export class TableBodyComponent implements OnInit, OnChanges {
   // Initialize the filteredRows and the search text for all the filterable columns.
   initializeFilterData() {
     this.filteredRows = this.rows;
-    this.columns.forEach(column => {
-      if (column.filterable) {
-        this.filterData[column.id] = '';
-      }
-    });
+
+    if (this.columns) {
+      this.columns.forEach(column => {
+        if (column.filterable) {
+          this.filterData[column.id] = '';
+        }
+      });
+    }
   }
 
   // Reads the sort type of the given column(up/down) and sorts accorodingly

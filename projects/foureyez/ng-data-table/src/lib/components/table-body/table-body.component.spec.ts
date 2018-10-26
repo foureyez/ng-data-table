@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableBodyComponent } from './table-body.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TableBodyComponent', () => {
   let component: TableBodyComponent;
@@ -8,9 +13,15 @@ describe('TableBodyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableBodyComponent ]
+      imports: [
+        BrowserModule,
+        FontAwesomeModule,
+        FormsModule,
+        RouterTestingModule
+      ],
+      declarations: [TableBodyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

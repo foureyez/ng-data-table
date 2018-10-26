@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   imports: [
     BrowserModule,
