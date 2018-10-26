@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
 import { Row } from '../../model/row';
 import { Column } from '../../model/column';
 import { DataTableService } from '../../data-table.service';
@@ -12,7 +12,7 @@ import { Router, NavigationStart } from '@angular/router';
   templateUrl: './table-body.component.html',
   styleUrls: ['./table-body.component.css']
 })
-export class TableBodyComponent implements OnInit {
+export class TableBodyComponent implements OnInit, OnChanges {
 
   @Input() rows: Row[];
   @Input() columns: Column[];
@@ -30,6 +30,14 @@ export class TableBodyComponent implements OnInit {
     this.handleEvent();
     this.initializeFilterData();
     this.attachUrlChangeEvent();
+  }
+
+  // Update the filteredRows if the rows data passed to ng-data-table changes.
+  ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
+    if (changes['rows']) {
+      this.filteredRows = this.rows;
+      console.log('Rows data updated inside table-body : Size ' + this.filteredRows.length);
+    }
   }
 
   attachUrlChangeEvent() {
