@@ -1,6 +1,4 @@
 # ng-data-table
-[![Build Status](https://travis-ci.org/foureyez/ng-data-table.svg?branch=master)](https://travis-ci.org/foureyez/ng-data-table)
-
 This angular library provides sorting, filtering..(adding more) capabilities to normal table.
 Built using Angular 7 and Bootstrap 4.
 
@@ -8,7 +6,7 @@ Built using Angular 7 and Bootstrap 4.
 * Data-Table library source is located in projects/data-table.
 
 ## Usage
-To use this library in your project just install the dependency by running `npm install --save data-table`.
+To use this library in your project just install the dependency by running `npm i @foureyez/ng-data-table`.
 
 ### Basic Table
 ```html
@@ -18,11 +16,36 @@ To use this library in your project just install the dependency by running `npm 
 ### Defining rows and columns in component
 * `rows` can be any valid JSON array.
 * `columns` can be defined inside the component. 
-* `data-table` takes `columns` as a array of [Column](https://github.com/foureyez/data-table/blob/master/projects/data-table/src/lib/model/column.ts) type. 
+* `data-table` takes `columns` as a array of [Column](https://github.com/foureyez/data-table/blob/master/projects/ng-data-table/src/lib/model/column.ts) type. 
 *  E.g. 
-     ```javascript
-     columns = new Array<Column>();
-     columns.push(new Column(id, title, sortable, filterable));
+    ```javascript
+    import { Column } from '@foureyez/ng-data-table';
+    ...
+    ...
+    columns: Column[];
+    rows = [{
+        id: '1',
+        name: 'Abhijeet',
+        age: '23',
+        address: 'Hyderabad'
+    }, {
+        id: '2',
+        name: 'Anmol',
+        age: '43',
+        address: 'Hyderabad'
+    },
+    ...
+    ...
+    ...];
+
+    constructor() {
+        this.columns = new Array<Column>();
+                            //id, title, sortable, filterable;
+        this.columns.push(new Column('id', 'ID', false, false));
+        this.columns.push(new Column('name', 'Name', true, true));
+        this.columns.push(new Column('age', 'Age', true, true));
+        this.columns.push(new Column('address', 'Address', true, true));
+    }
      ```
 #### Column Attributes
 | Attribute | Description |
