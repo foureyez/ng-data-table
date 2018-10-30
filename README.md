@@ -26,6 +26,23 @@ Also add this import to your global styles css file (styles.css) for bootstrap i
 `@import "~bootstrap/dist/css/bootstrap.css";`
 
 ### Basic Table
+* In app.module.ts
+````javascript
+import { DataTableModule } from '@foureyez/ng-data-table';
+...
+...
+...
+@NgModule({
+  ...
+  imports: [
+    ...
+    DataTableModule,
+    ...
+  ],
+})
+````
+
+* In .html file
 ```html
 <data-table [columns]="columns" [rows]="rows"></data-table>
 ```

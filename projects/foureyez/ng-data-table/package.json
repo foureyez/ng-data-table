@@ -1,6 +1,6 @@
 {
   "name": "@foureyez/ng-data-table",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "license" : "GPL-3.0-or-later",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
