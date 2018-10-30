@@ -2,13 +2,28 @@
 This angular library provides sorting, filtering..(adding more) capabilities to normal table.
 Built using Angular 7 and Bootstrap 4.
 
+[Github Repo](https://github.com/foureyez/ng-data-table) 
+
 [![Build Status](https://travis-ci.org/foureyez/ng-data-table.svg?branch=master)](https://travis-ci.org/foureyez/ng-data-table)
 
 * The demo files are located in /src/app folder. 
 * Data-Table library source is located in projects/data-table.
 
 ## Usage
-To use this library in your project just install the dependency by running `npm i @foureyez/ng-data-table`.
+To use this library in your project just install the dependency by running 
+
+`npm i @foureyez/ng-data-table`.
+
+Install all dependencies :
+
+* `npm i bootstrap`
+* `npm i @fortawesome/angular-fontawesome`
+* `npm i @fortawesome/fontawesome-svg-core`
+* `npm i @fortawesome/free-solid-svg-icons`
+
+Also add this import to your global styles css file (styles.css) for bootstrap if you haven't already.
+
+`@import "~bootstrap/dist/css/bootstrap.css";`
 
 ### Basic Table
 ```html
