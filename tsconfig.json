@@ -18,17 +18,20 @@
       "dom"
     ],
     "paths": {
-      "data-table": [
-        "dist/data-table"
-      ],
-      "data-table/*": [
-        "dist/data-table/*"
-      ],
       "@foureyez/ng-data-table": [
         "dist/foureyez/ng-data-table"
       ],
       "@foureyez/ng-data-table/*": [
         "dist/foureyez/ng-data-table/*"
+      ],
+      "@alcazar/ngx-data-table": [
+        "dist/alcazar/ngx-data-table"
+      ],
+      "@alcazar/ngx-data-table/*": [
+        "dist/alcazar/ngx-data-table/*"
+      ],
+      "core-js/es7/reflect": [
+        "node_modules/core-js/proposals/reflect-metadata"
       ]
     }
   }

@@ -2,3 +2,11 @@
     background-color: #EEE;
     border: 2px solid #DDD;
 }
+
+.link {
+    background-color: blue;
+}
+
+.link :hover{
+    background-color: aqua; 
+}

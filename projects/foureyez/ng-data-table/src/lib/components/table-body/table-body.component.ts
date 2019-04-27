@@ -119,8 +119,9 @@ export class TableBodyComponent implements OnInit, OnChanges {
           .filter(column => {
             return column.filterable;
           })
-          .forEach(column => {
-            result = result && row.data[column.id].toLowerCase().includes(this.filterData[column.id].toLowerCase());
+          .every((column, index) => {
+            result = row.data[column.id].toLowerCase().includes(this.filterData[column.id].toLowerCase());
+            return result;
           });
 
         return result;

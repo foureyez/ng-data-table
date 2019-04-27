@@ -1,8 +1,7 @@
 <tr *ngIf="filterEnabled">
     <td></td>
     <td *ngFor="let column of columns">
-        <input type="text" class="form-control form-control-sm" *ngIf="column.filterable" [placeholder]="column.title"
-            [(ngModel)]="filterData[column.id]" (keyup)="filterRows()">
+        <input type="text" class="form-control form-control-sm" *ngIf="column.filterable" [placeholder]="column.title" [(ngModel)]="filterData[column.id]" (keyup)="filterRows()">
     </td>
 </tr>
 <tr *ngFor="let row of filteredRows" [id]="row.data['id']" [ngClass]="{'highlighted' : row.isHighlighted}">
@@ -11,5 +10,8 @@
             <fa-icon class="sort-icon" [icon]="faLink"></fa-icon>
         </a>
     </td>
-    <td *ngFor="let column of columns">{{row.data[column.id]}}</td>
+    <td *ngFor="let column of columns">
+        <a [routerLink]="[column.link, row.data[column.id]]" routerLinkActive="router-link-active" *ngIf="column.link && column.link !== ''; else elseBlock">{{row.data[column.id]}}</a>
+        <ng-template #elseBlock>{{row.data[column.id]}}</ng-template>
+    </td>
 </tr>

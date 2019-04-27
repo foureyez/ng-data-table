@@ -149,9 +149,9 @@ export class AppComponent {
 
   prepareColumn() {
     this.columns = new Array<Column>();
-    this.columns.push(new Column('id', 'ID', false, false));
-    this.columns.push(new Column('name', 'Name', true, true));
-    this.columns.push(new Column('age', 'Age', true, true));
-    this.columns.push(new Column('address', 'Address', true, true));
+    this.columns.push(new Column('id', 'ID', false, false, 'test'));
+    this.columns.push(new Column('name', 'Name', false, false, ''));
+    this.columns.push(new Column('age', 'Age', true, true, ''));
+    this.columns.push(new Column('address', 'Address', true, true, null));
   }
 }

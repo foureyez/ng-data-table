@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           },
@@ -138,7 +139,7 @@
       "root": "projects/foureyez/ng-data-table",
       "sourceRoot": "projects/foureyez/ng-data-table/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -161,6 +162,41 @@
             "tsConfig": [
               "projects/foureyez/ng-data-table/tsconfig.lib.json",
               "projects/foureyez/ng-data-table/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@alcazar/ngx-data-table": {
+      "root": "projects/alcazar/ngx-data-table",
+      "sourceRoot": "projects/alcazar/ngx-data-table/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/alcazar/ngx-data-table/tsconfig.lib.json",
+            "project": "projects/alcazar/ngx-data-table/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/alcazar/ngx-data-table/src/test.ts",
+            "tsConfig": "projects/alcazar/ngx-data-table/tsconfig.spec.json",
+            "karmaConfig": "projects/alcazar/ngx-data-table/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/alcazar/ngx-data-table/tsconfig.lib.json",
+              "projects/alcazar/ngx-data-table/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
